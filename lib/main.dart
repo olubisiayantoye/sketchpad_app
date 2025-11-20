@@ -1,4 +1,6 @@
 // lib/main.dart
+// ignore_for_file: unused_local_variable, unnecessary_null_comparison, unused_field
+
 import 'dart:io';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
@@ -35,6 +37,10 @@ class SketchpadApp extends StatelessWidget {
 
 /// --------------------------
 /// HomeScreen: hosts canvas + toolbar + navigation to gallery
+/// Displays the canvas where the user draws.
+
+//Shows toolbar buttons for brush size, colors, eraser, undo/redo, background, save, and clear.
+//Wraps the canvas in a RepaintBoundary so it can be exported as a PNG.
 /// --------------------------
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -330,9 +336,25 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-/// --------------------------
+/// ------------------------------------------------------------
 /// DrawingController: manages strokes, undo/redo, tool state
-/// --------------------------
+/// Stores all strokes drawn by the user.
+
+//Each stroke contains:
+
+//Points (Offset)
+
+//Color
+// //Brush size
+// //Whether it's erasing
+//Handles undo/redo by keeping two stacks:
+
+//strokes
+
+//undoneStrokes
+
+//Notifies the painter whenever something changes.
+/// -------------------------------------------------------------
 class DrawingController with ChangeNotifier {
   final List<Stroke> _strokes = [];
   final List<Stroke> _undone = [];

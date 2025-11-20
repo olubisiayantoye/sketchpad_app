@@ -3,9 +3,12 @@
 
 ### Author
 **Olubisi Ayantoye**  
-Brigham Young University–Idaho  
+-- Brigham Young University–Idaho  
+
 
 ---
+GTHUB_LINK_HERE: 
+VIDEO_LINK_HERE: https://www.youtube.com/watch?v=6pL7R9YPGEg
 
 ## 📘 Overview
 
@@ -143,5 +146,115 @@ Brigham Young University–Idaho
 
 ### 1️⃣ Create or Clone the Project
 ```bash
-flutter create bisi_sketchpad_app
-cd bisi_sketchpad_app
+flutter create sketchpad_app
+cd sketchpad_app
+
+
+flutter clean
+flutter run
+
+
+
+Demo & Training Video
+
+A short walkthrough demonstrating how the app works and an overview of the codebase is available here:
+
+👉 Video Link:
+VIDEO_LINK_HERE: https://www.youtube.com/watch?v=6pL7R9YPGEg
+
+This video explains:
+
+How to use the drawing canvas
+
+Brush controls, eraser, background options
+
+Saving and sharing sketches
+
+Viewing and deleting sketches in the gallery
+
+Key parts of the source code
+
+🚀 Features
+
+✏️ Freehand drawing with smooth strokes
+
+🎨 Brush color picker
+
+📏 Adjustable brush thickness
+
+🧽 Eraser mode
+
+🖼️ Background image picker
+
+🌈 Background color selector
+
+💾 Save sketches (high-resolution PNG)
+
+📤 Share sketches via system share sheet
+
+🗂️ Gallery screen to view, preview, share, and delete saved images
+
+🛠️ Undo / Redo functionality
+
+🧹 Clear canvas
+
+📂 Project Structure
+lib/
+│
+├── main.dart                # App entry point
+├── HomeScreen               # Canvas, toolbar, brush controls
+├── DrawingController        # Stroke management, undo/redo, brush tools
+├── _CanvasPainter           # Custom painter for drawing strokes
+├── GalleryScreen            # Shows saved sketches
+└── FullscreenImage          # Displays single sketch for preview/sharing
+
+🧠 How It Works
+Drawing System
+
+Each stroke is a list of Offset points.
+
+DrawingController stores strokes and notifies the painter.
+
+_CanvasPainter redraws all strokes and the background each frame.
+
+Saving Images
+
+The canvas is wrapped in a RepaintBoundary.
+
+Flutter converts the widget into a PNG with toImage().
+
+Image is saved to:
+
+Device gallery
+
+Application documents folder (for gallery screen)
+
+Gallery Management
+
+The app reads all PNG files in the documents directory.
+
+Items are shown in a 3-column grid.
+
+Users can preview, share, or delete images.
+
+📦 Dependencies
+
+Key packages used:
+
+image_gallery_saver
+path_provider
+share_plus
+permission_handler
+image_picker
+flutter/rendering
+
+▶️ How to Run
+flutter pub get
+flutter run
+
+
+Runs on:
+✔ Android
+✔ iOS
+
+📜 License
